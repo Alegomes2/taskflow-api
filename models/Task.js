@@ -27,6 +27,11 @@ const taskSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+
+  favorite: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 // exporta o model

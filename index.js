@@ -17,15 +17,17 @@ mongoose
 
 const app = express();
 
+// Libera acesso do frontend
+app.use(cors({
+  origin: "http://localhost:5173"
+}));
+
 // Permite JSON
 app.use(express.json());
 
 // Conectando no servidor
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
-
-// Libera acesso do frontend
-app.use(cors());
 
 app.get("/api/dashboard", authMiddleware, (req, res) => {
   res.json({
