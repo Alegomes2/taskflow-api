@@ -19,7 +19,7 @@ const app = express();
 
 // Libera acesso do frontend
 app.use(cors({
-  origin: "http://localhost:5173"
+  origin: "*"
 }));
 
 // Permite JSON
